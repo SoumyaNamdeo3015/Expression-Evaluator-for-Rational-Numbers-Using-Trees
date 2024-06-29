@@ -47,6 +47,13 @@ The syntax of E++ includes two types of statements:
 
 # UnlimitedInt
 
+The `UnlimitedInt` class is a custom integer data type designed to handle integers of arbitrary size without
+any limitations on their magnitude. Unlike standard integer types in programming languages, such as int or
+long, which have fixed ranges, `UnlimitedInt` can represent extremely large or precise integer values. This
+class is a fundamental building block for working with integers in situations where traditional integer types
+fall short due to their size limitations.
+
+
 ## UnlimitedInt Class Description
 
 The `UnlimitedInt` class has the following attributes and methods:
@@ -78,16 +85,16 @@ In a related context, we introduce a class named `UnlimitedRational`, which will
 
 The `UnlimitedRational` class extends the concept of rational numbers by using the previously introduced `UnlimitedInt` class for its numerator and denominator. This allows you to accommodate even the most extensive calculations in scenarios where standard floating-point representations might suffer from precision loss.
 
-# UnlimitedRational Class
+## UnlimitedRational Class
 
 The `UnlimitedRational` class extends the concept of rational numbers by using the `UnlimitedInt` class for its numerator and denominator. This allows for precise calculations even in scenarios where standard floating-point representations might suffer from precision loss. The `UnlimitedRational` class includes the following attributes and methods:
 
-## Attributes
+### Attributes
 
 - `p`: A pointer to an `UnlimitedInt` object representing the numerator. 
 - `q`: A pointer to an `UnlimitedInt` object representing the denominator. Note that `p` and `q` must be coprime, or the implementation will not pass tests. If `p` is 0, any non-zero value of `q` will be acceptable for the denominator.
 
-## Methods
+### Methods
 
 - `get_p()`: Returns the numerator as an `UnlimitedInt` object.
 - `get_q()`: Returns the denominator as an `UnlimitedInt` object.
