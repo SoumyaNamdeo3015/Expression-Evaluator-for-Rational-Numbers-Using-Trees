@@ -45,3 +45,31 @@ The syntax of E++ includes two types of statements:
 - **Declaration Before Use**: A variable `x` can only appear on the RHS of an expression if there exists a statement `x := E` before it.
 - **Immutability**: Each variable `x` can only be assigned once. Multiple assignments like `x := E1` and `x := E2` are not allowed.
 
+# UnlimitedInt
+
+## UnlimitedInt Class Description
+
+The `UnlimitedInt` class has the following attributes and methods:
+
+### Attributes
+- **`size`**: An integer that represents the size of the `UnlimitedInt` object.
+- **`capacity`**: An integer that represents the capacity of the `UnlimitedInt` object.
+- **`sign`**: An integer that indicates the sign of the `UnlimitedInt` object. It is set to `1` for positive numbers and `-1` for negative numbers. For the `UnlimitedInt` representing `0`, you can set this to either `0`, `1`, or `-1`.
+- **`unlimited_int`**: An integer pointer that points to an array storing the unlimited integer.
+
+### Methods
+- **`get_capacity()`**: Returns the capacity of the `UnlimitedInt` object.
+- **`get_size()`**: Returns the size of the `UnlimitedInt` object.
+- **`get_array()`**: Returns a pointer to the array storing the `UnlimitedInt` digits.
+- **`get_sign()`**: Returns the sign of the `UnlimitedInt` object (`1` for positive, `-1` for negative).
+- **`to_string()`**: Converts a `UnlimitedInt` object to its string representation. For example, `"5"` for `5` and `"-5"` for `-5`.
+
+### Arithmetic Operations
+The `UnlimitedInt` class supports the following arithmetic operations:
+- **Addition**
+- **Subtraction**
+- **Multiplication**
+- **Division**
+- **Modulus**
+
+
