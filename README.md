@@ -35,5 +35,17 @@ x).
   - ((x + y)(a − b)) (missing operator between sub-expressions)
   - (a + b))(unbalanced parentheses)
 
+- ### Syntax :
+The syntax of E++ is very simple. There are two types of statements:
+- **Variable Assignment** : v := E where the LHS is a variable v and the RHS is a well formed expression
+E as defined above.
+
+- **Returning a Value** : return E where E is a well formed expression.
+
+- **Declaration Before Use** : A variable x can appear on the RHS of an expression only if there exists
+a statement before it of the form x := E.
+
+- **Immutability** : A variable x can only be assigned to once, i.e. there should not exist two distinct
+statements S1 and S2 such that S1 : x := E1 and S2 : x := E2.
 
 
