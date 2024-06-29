@@ -129,7 +129,7 @@ Each well-formed expression evaluates to a value. Therefore, each node in the pa
 
 **Note:** For an assignment `v := E`, we will not check the evaluated values at the nodes corresponding to `v` and `:=`. Feel free to assign a garbage value. Some more details are present in the following sections, particularly Section 5.2.
 
-# Symbol Table in Parsing and Expression Evaluation (30 Marks)
+# Symbol Table in Parsing and Expression Evaluation 
 
 In this assignment, you will also be implementing a Symbol Table using an (unbalanced) Binary Search Tree (BST) to manage variables in the E++ expression evaluator. This task is essential for both parsing and expression evaluation. Let’s explore the concept and its relevance:
 
