@@ -5,7 +5,7 @@ An expression evaluator is a software component or program that interprets and c
 mathematical, logical, or symbolic expressions provided as input. It takes an expression as input, processes
 it according to predefined rules or algorithms, and returns the result of the evaluation. Your task in this
 assignment is to create an expression evaluator for programs written in the language E++, for a special
-kind of input data which is described below. Then numbers in E++ can integer or rational and may be very large that's why other part of this projects includes creating unlimitedInt and unlimitedRational classes.
+kind of input data which is described below. The numbers in E++ can integer or rational and may be very large that's why other part of this projects includes creating unlimitedInt and unlimitedRational classes.
 
 # Description of E++ : 
 
