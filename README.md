@@ -96,4 +96,13 @@ The `UnlimitedRational` class extends the concept of rational numbers by using t
 - `get_p_str()`: Returns the numerator as a string representation.
 - `get_q_str()`: Returns the denominator as a string representation.
 - `get_frac_str()`: Returns the rational number as a string in the form "p/q". If `p/q` is positive, then both "p/q" and "-p/-q" are acceptable answers. Similarly, if `p/q` is negative, the "-" sign can be either in the numerator or the denominator.
+- 
+### Arithmetic Operations
+The `UnlimitedRational` class supports the following arithmetic operations:
+- **Addition**
+- **Subtraction**
+- **Multiplication**
+- **Division**
+- **Modulus**
+
 
