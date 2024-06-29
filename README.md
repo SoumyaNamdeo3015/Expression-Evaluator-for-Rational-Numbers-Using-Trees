@@ -9,7 +9,7 @@ kind of input data which is described below.
 
 # Description of E++ : 
 
-## - Expression :
+- ## Expression :
 
 - Expressions in E++ are fully parenthesized, well-formed arithmetic infix expressions, using the following
 operators: +, -, *, /. The operands appearing in an expression may be numerical, or variables (such as
