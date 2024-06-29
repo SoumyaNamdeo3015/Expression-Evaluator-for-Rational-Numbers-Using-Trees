@@ -74,8 +74,6 @@ The `UnlimitedInt` class supports the following arithmetic operations:
 
 # UnlimitedRational 
 
-## UnlimitedRational Class
-
 In a related context, we introduce a class named `UnlimitedRational`, which will be used for evaluating expressions in one of the subparts of the assignment. A rational number is typically represented in the form `p/q`, where `p` and `q` are integers (Z), `p` and `q` are coprime (meaning they have no common divisors other than 1), and `q ≠ 0`.
 
 The `UnlimitedRational` class extends the concept of rational numbers by using the previously introduced `UnlimitedInt` class for its numerator and denominator. This allows you to accommodate even the most extensive calculations in scenarios where standard floating-point representations might suffer from precision loss.
