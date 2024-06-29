@@ -114,20 +114,16 @@ The `UnlimitedRational` class supports the following arithmetic operations:
 
 A parser converts each statement of the program into a tree structure (called a Parse Tree) which is expressive of all the components of that statement. It allows us to capture the structure of the program, as well as perform syntactic checks. 
 
-Parse tree for the statement `x2 := (2 + (7 ∗ x0))` is given below.
-
 In this assignment, the parse tree for a given statement will always be unique. We do this by imposing the following conditions on the parse tree:
 
 - For a statement `v := E`, the node associated with the variable `v` will be in the left subtree of the node associated with the `:=` assignment operator, and all of the nodes in the tree of expression `E` will be in the right subtree of the node associated with the `:=` assignment operator.
 - Within an expression, all of the variables and constants needed to evaluate the left operand of the expression must be in the left subtree of the operator node, and all of the variables and constants needed to evaluate the right operand of the expression must be in the right subtree of the operator node.
 
-Hence the parse tree below for the statement `x2 := (2 + (7 ∗ x0))` would be incorrect since for the `+` operand, we require `2` to be in the left subtree of the operator node and `7` and `x0` to be in the right subtree of the operator node.
-
 # Expression Evaluator 
 
 Each well-formed expression evaluates to a value. Therefore, each node in the parse tree will have a value associated with it, which can be calculated explicitly by recursively evaluating the subtree rooted at that node. 
 
-**Note:** For an assignment `v := E`, we will not check the evaluated values at the nodes corresponding to `v` and `:=`. Feel free to assign a garbage value. Some more details are present in the following sections, particularly Section 5.2.
+**Note:** For an assignment `v := E`, we will not check the evaluated values at the nodes corresponding to `v` and `:=`. Feel free to assign a garbage value.
 
 # Symbol Table in Parsing and Expression Evaluation 
 
