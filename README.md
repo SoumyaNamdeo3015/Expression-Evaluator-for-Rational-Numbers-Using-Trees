@@ -110,4 +110,82 @@ The `UnlimitedRational` class supports the following arithmetic operations:
 - **Division**
 - **Modulus**
 
+# Parser for E++ 
+
+A parser converts each statement of the program into a tree structure (called a Parse Tree) which is expressive of all the components of that statement. It allows us to capture the structure of the program, as well as perform syntactic checks. 
+
+Parse tree for the statement `x2 := (2 + (7 ∗ x0))` is given below.
+
+In this assignment, the parse tree for a given statement will always be unique. We do this by imposing the following conditions on the parse tree:
+
+- For a statement `v := E`, the node associated with the variable `v` will be in the left subtree of the node associated with the `:=` assignment operator, and all of the nodes in the tree of expression `E` will be in the right subtree of the node associated with the `:=` assignment operator.
+- Within an expression, all of the variables and constants needed to evaluate the left operand of the expression must be in the left subtree of the operator node, and all of the variables and constants needed to evaluate the right operand of the expression must be in the right subtree of the operator node.
+
+Hence the parse tree below for the statement `x2 := (2 + (7 ∗ x0))` would be incorrect since for the `+` operand, we require `2` to be in the left subtree of the operator node and `7` and `x0` to be in the right subtree of the operator node.
+
+# Expression Evaluator 
+
+Each well-formed expression evaluates to a value. Therefore, each node in the parse tree will have a value associated with it, which can be calculated explicitly by recursively evaluating the subtree rooted at that node. 
+
+**Note:** For an assignment `v := E`, we will not check the evaluated values at the nodes corresponding to `v` and `:=`. Feel free to assign a garbage value. Some more details are present in the following sections, particularly Section 5.2.
+
+# Symbol Table in Parsing and Expression Evaluation (30 Marks)
+
+In this assignment, you will also be implementing a Symbol Table using an (unbalanced) Binary Search Tree (BST) to manage variables in the E++ expression evaluator. This task is essential for both parsing and expression evaluation. Let’s explore the concept and its relevance:
+
+## Understanding Symbol Tables
+
+A symbol table is a critical data structure used in our evaluator to store information about variables, functions, or other identifiers within an E++ program. It serves as a mapping, associating unique identifiers (in this case, variable names) with their corresponding values or attributes.
+
+## Relevance to Parsing
+
+Symbol tables play a crucial role in syntax checking. They ensure that variables are declared before they are used, preventing undefined variable errors and other syntax-related issues. However, in this assignment, this would not be relevant since the test cases ensure syntax and semantics are followed correctly.
+
+## Relevance to Expression Evaluation
+
+For expression evaluation:
+- **Variable Resolution:** In E++, expressions often include variables. To evaluate these expressions, you must resolve the variables to their actual values. The symbol table provides a mechanism to map variable names to their corresponding values.
+- **Efficient Evaluation:** A symbol table enhances the efficiency of expression evaluation. Without a symbol table, you would need to traverse the entire code repeatedly to find variable values, leading to performance issues.
+
+# Implementation of Symbol Table, Parser, and Expression Evaluator
+
+In this section, we describe the implementation for the Symbol Table, Parser, and Expression Evaluator for the programming language E++. We outline the expected functionality and relationships between these components.
+
+## Symbol Table
+
+This needs to be implemented using a BST, not necessarily balanced. You should use the `<` operator (lexicographic ordering) for comparison amongst keys (strings).
+
+### Functions to Implement
+
+You are required to implement the following functions in the `SymbolTable` class defined in `symtable.h`:
+
+- `insert(string k, UnlimitedRational* v)`: This function should insert a key-value pair (variable name and its value) into the Symbol Table.
+- `remove(string k)`: Implement a function to remove a key-value pair based on the variable name.
+- `search(string k)`: Write a function to retrieve the value associated with a variable name from the Symbol Table.
+- `get_size()`: Implement a function to get the size (number of entries) in the Symbol Table.
+- `get_root()`: Provide a function to get the root node of the Symbol Table (useful for internal implementation).
+
+## Evaluator
+
+This is the top-level class which will read individual instructions, parse them, and evaluate them.
+
+### Functions to Implement
+
+You are required to implement the following functions in the `Evaluator` class defined in `evaluator.h`:
+
+- `void parse(vector<string> code)`: This function should read an input vector of tokens (strings), parse it, and convert it to a parse tree. The root of the tree should be pushed into the `expr_trees` vector. Ensure that the `type` and `val` properties are correctly set during parsing. An example is:
+  - **Statement:**
+    ```
+    v := (13 + (2 / 51))
+    ```
+  - **Tokens (Vector of strings):**
+    ```
+    ["v", ":=", "(", "13", "+", "(", "2", "+", "(", "2", "/", "51", ")", ")"]
+    ```
+  Note that the tokens corresponding to numerical values given as input to this function will always be integral (not rational). Only the intermediate and final values during calculations have to be rationals.
+
+- `void eval()`: This function should evaluate the last element of the `expr_trees` vector. It will be called immediately after a call to `parse`, and it should also populate the symbol tables. Ensure that the `evaluated_value` property is correctly set during evaluation.
+
+
+
 
