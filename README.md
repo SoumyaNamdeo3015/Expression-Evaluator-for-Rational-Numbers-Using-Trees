@@ -49,3 +49,37 @@ a statement before it of the form x := E.
 statements S1 and S2 such that S1 : x := E1 and S2 : x := E2.
 
 
+# UnlimitedInt :
+In this subsection, we will discuss the details of the UnlimitedInt class.
+The UnlimitedInt class is a custom integer data type designed to handle integers of arbitrary size without
+any limitations on their magnitude. Unlike standard integer types in programming languages, such as int or
+long, which have fixed ranges, UnlimitedInt can represent extremely large or precise integer values. This
+class is a fundamental building block for working with integers in situations where traditional integer types
+fall short due to their size limitations.
+
+## UnlimitedInt Class Description
+
+The `UnlimitedInt` class has the following attributes and methods:
+
+### Attributes
+- **`size`**: An integer that represents the size of the `UnlimitedInt` object.
+- **`capacity`**: An integer that represents the capacity of the `UnlimitedInt` object.
+- **`sign`**: An integer that indicates the sign of the `UnlimitedInt` object. It is set to `1` for positive numbers and `-1` for negative numbers. For the `UnlimitedInt` representing `0`, you can set this to either `0`, `1`, or `-1`.
+- **`unlimited_int`**: An integer pointer that points to an array storing the unlimited integer.
+
+### Methods
+- **`get_capacity()`**: Returns the capacity of the `UnlimitedInt` object.
+- **`get_size()`**: Returns the size of the `UnlimitedInt` object.
+- **`get_array()`**: Returns a pointer to the array storing the `UnlimitedInt` digits.
+- **`get_sign()`**: Returns the sign of the `UnlimitedInt` object (`1` for positive, `-1` for negative).
+- **`to_string()`**: Converts a `UnlimitedInt` object to its string representation. For example, `"5"` for `5` and `"-5"` for `-5`.
+
+### Arithmetic Operations
+The `UnlimitedInt` class supports the following arithmetic operations:
+- **Addition**
+- **Subtraction**
+- **Multiplication**
+- **Division**
+- **Modulus**
+
+
